@@ -1,7 +1,7 @@
 import '../styles/App.css';
 import Footer from './Footer';
 import Header from './Header';
-import Results from './Results';
+import Results from './Map';
 
 function App() {
   return (
