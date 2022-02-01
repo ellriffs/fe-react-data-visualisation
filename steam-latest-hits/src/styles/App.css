@@ -1,3 +1,12 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  width: auto;
+  margin: 05vw;
+  display: grid;
+  grid-template-rows: 15vh auto 15vh;
+}
+
+.App * {
+  text-align: center;
 }

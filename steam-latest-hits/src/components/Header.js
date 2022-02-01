@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header >
-      <h1>Latest Steam Hits!</h1>
+      <h1>CompareThePokemon.com</h1>
     </header>
   );
 };
