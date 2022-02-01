@@ -1,7 +1,9 @@
+import '../styles/Header.css'
+
 const Header = () => {
   return (
-    <header >
-      <h1>CompareThePokemon.com</h1>
+    <header className="Header">
+      <h1>Compare The Pokemon</h1>
     </header>
   );
 };

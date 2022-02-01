@@ -1,0 +1,14 @@
+.Header {
+	background-color: red;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: rgb(255, 255, 255);
+	border-bottom: 2px solid black;
+	font-family: 'Pokemon Solid', sans-serif;
+	letter-spacing: 0.3em;
+}
+
+.Header h1 {
+	align-items: center;
+}

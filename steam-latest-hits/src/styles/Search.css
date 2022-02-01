@@ -1,0 +1,11 @@
+.Search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5em;
+  margin-bottom: 2em
+}
+
+.Search__select {
+  max-width: max-content;
+}

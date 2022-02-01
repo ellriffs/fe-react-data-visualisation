@@ -6,19 +6,22 @@ import Search from './Search';
 const Results = () => {
   const [pokemonId, setPokemonId] = useState(1);
   const [pokemonData, setPokemonData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
       .then((res) => res.json())
       .then((pokemon) => {
+        setIsLoading(false);
         console.log(pokemon)
         return pokemon;
       })
       .then(setPokemonData)
   }, [pokemonId])
 
-  const loadInPokemon = () => {
-    if (pokemonData) {
+  const loadPokemon = () => {
+    if (!isLoading && pokemonData) {
       return <Pokemon pokemonData={pokemonData} />
     } else {
       return <p>Loading!</p>
@@ -28,7 +31,7 @@ const Results = () => {
   return (
     <main>
       <Search setPokemonId={setPokemonId} />
-      {loadInPokemon()}
+      {loadPokemon()}
     </main>
   );
 };

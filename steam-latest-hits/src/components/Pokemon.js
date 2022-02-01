@@ -1,5 +1,8 @@
 import React from "react";
+import { capitalise } from "../util/strings";
 import { RadarChart } from "../util/RadarChart";
+import '../styles/Pokemon.css';
+import Moves from "./Moves";
 
 function getPokemonImage(pokemon) {
   return pokemon.sprites.other["official-artwork"]["front_default"];
@@ -7,21 +10,19 @@ function getPokemonImage(pokemon) {
 
 function Pokemon(props) {
   const { pokemonData } = props;
-  const { name, stats } = pokemonData;
+  const { moves, stats } = pokemonData;
+  const name = capitalise(pokemonData.name);
   const image = getPokemonImage(pokemonData)
   return (
-    <section>
-      <p>Name = {name}</p>
-      <img src={image} />
-      <ul>
-        {stats.map((stat) => {
-          return (
-            <li key={stat.stat.name}>
-              {stat.stat.name}: {stat.base_stat}
-            </li>
-          )
-        })}
-      </ul>
+    <section className="Pokemon">
+      <h2 className="Pokemon__name">{name}</h2>
+      <p className="Pokemon__type">
+        Type: {pokemonData.types.map(typeData => {
+          return capitalise(typeData.type.name)
+        }).join(', ')}
+      </p>
+      <img className="Pokemon__image" src={image} />
+      <Moves moves={moves}/>
       <RadarChart stats={stats}/>
     </section>
   )

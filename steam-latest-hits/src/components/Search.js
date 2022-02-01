@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import '../styles/Search.css'
 
 const Search = (props) => {
   const [allPokemon, setAllPokemon] = useState([]);
@@ -20,8 +21,9 @@ const Search = (props) => {
   };
 
   return (
-    <form>
-      <select onChange={handleChange}>
+    <form className='Search'>
+      <label>Choose your Pokemon:</label>
+      <select className='Search__select' onChange={handleChange}>
         {allPokemon.map((pokemon) => {
           const pokeId = pokemon.url.split('/').slice(-2)[0];
           return (

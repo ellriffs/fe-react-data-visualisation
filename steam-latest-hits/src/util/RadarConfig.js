@@ -4,7 +4,7 @@ export const RadarData = (data) => {
     labels: data.map(stat => stat.stat.name),
     datasets: [
       {
-        label: "March",
+        label: "Stats",
         backgroundColor: "rgba(34, 202, 236, .2)",
         borderColor: "rgba(34, 202, 236, 1)",
         pointBackgroundColor: "rgba(34, 202, 236, 1)",
